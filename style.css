@@ -1,0 +1,8 @@
+*{
+    margin : 0 auto;
+    padding : 0 auto;
+}
+body{
+    content: center;
+    background: linear-gradient(to left, #CBDCEB,#6D94C5,#799EFF);
+}
