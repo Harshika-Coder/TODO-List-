@@ -63,7 +63,8 @@ input{
 button{
     padding: 10px 15px;
     border: none;
-    background-color: burlywood;
+    border-radius: 40px;
+    background: burlywood;
     outline: none;
     color: white;
     cursor: pointer;
@@ -71,6 +72,11 @@ button{
 
 ul li{
     list-style-type: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
 }
 
 ul li::before{
@@ -79,9 +85,18 @@ ul li::before{
     display: inline-block;
     width: 20px;
     height: 20px;
-    margin-right: 10px;
-    vertical-align: middle;
+    top: 12px;
+    left: 8px;
+    background-position: center;
+    position: absolute;    
     background-size: cover;
-    user-select: none;
-    cursor: pointer;
+    }
+
+    ul li.checked{
+        color: hotpink;
+        text-decoration: line-through;
+    }
+
+    ul li.checked::before{
+        background-image:  url('Images/Checked.webp');
     }
