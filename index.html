@@ -10,17 +10,28 @@
 
 <body>
     <header>
-        <h1>TODO List<img src="Images/TODO.png"></h1>
+        <h1>TODO List</h1>
     </header>
     <div class="container">
-        <div class="row">
-            <input type="text" id="taskInput" placeholder="Enter a new task">
-            <button>Add Task</button>
+        <div class="stats-container">
+            <div class="details">
+                <h1>Tasks Complete</h1>
+                <p>Number of tasks you have completed</p>
+                <div id="progressBar">
+                    <div id="progress"></div>
+                </div>
+            </div>
+            <div class="stats-number">
+                <p id="completedTasks">2 / 3</p>
+            </div>
         </div>
-        <ul id="taskList">
-            <li class="checked">Task 1</li>
-            <li class="checked">Task 2</li>
-            <li class="checked">Task 3</li>
+
+        <form action="">
+            <input type="text" id="todo-input" placeholder="Add a new task..." required />
+            <button type="submit">Add Task</button>
+        </form>
+        <ul id="todo-list">
+            <!-- TODO items will be added here dynamically -->
         </ul>
     </div>
 
