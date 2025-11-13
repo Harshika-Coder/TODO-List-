@@ -4,9 +4,24 @@
     box-sizing: border-box;
 }
 
+body {
+    background: linear-gradient(to right, #abf4e7, #acb6e5);
+    background-size: cover;
+    background-position: center;
+}
+
 h1 {
     text-align: center;
     margin-top: 20px;
+}
+h1 img {
+    vertical-align: middle;
+    margin-left: 10px;
+}
+p{
+    font-size: 1.4rem;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .container {
@@ -23,7 +38,9 @@ h1 {
     padding: 30px;
     width: 100%;
     border-radius: 20px;
-    background-color: lightgray;
+    background-image: url('Images/Todotab.png');
+    background-position: center;
+    background-size: cover;
     border: 1px solid black;
     margin-top: 5px;
     gap: 50px;
@@ -32,6 +49,9 @@ h1 {
 
 .details {
     width: 100%;
+    font-size: 1rem;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Completed Tasks Circle */
@@ -39,12 +59,12 @@ h1 {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: aquamarine;
+    background-color: #7f89b7;
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
 }
 
@@ -56,6 +76,7 @@ h1 {
     margin-top: 20px;
     background-color: rgb(132, 215, 215);
 }
+
 #progress {
     width: 0%;
     height: 10px;
@@ -63,7 +84,8 @@ h1 {
     border-radius: 10px;
     transition: all 0.3s ease;
 }
-form{
+
+form {
     display: flex;
     margin-top: 50px;
     gap: 50px;
@@ -71,7 +93,8 @@ form{
     justify-content: space-between;
 
 }
-input{
+
+input {
     flex: 1;
     border: 1px solid black;
     border-radius: 10px;
@@ -80,15 +103,46 @@ input{
     outline: none;
     color: black;
 }
-button{
+
+.submit-btn {
     padding: 10px 20px;
     border: 1px solid black;
-    border-radius: 10px;
-    background-color: rgb(49, 97, 219);
+    border-radius: 15px;
+    background-color: rgb(78, 121, 231);
     font-size: 15px;
-    color: white;
+    color: rgb(193, 102, 102);
     cursor: pointer;
     font-size: 20px;
     font-weight: bold;
     outline: none;
+}
+
+#todo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+    width: 100%;
+    list-style: none;
+}
+
+.taskItem {
+    display: flex;
+    justify-content: space-between;
+    background-color: pink;
+    padding: 10px;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+.task{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.taskItem img{
+    width: 24px;
+    height: 24px;
+    margin: 0 10px;
+    cursor: pointer;
 }
