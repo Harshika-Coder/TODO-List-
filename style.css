@@ -135,6 +135,10 @@ input {
     justify-content: space-between;
     align-items: center;
 }
+.completed p {
+    text-decoration: line-through;
+    color: gray;
+}
 .task{
     display: flex;
     align-items: center;
@@ -145,4 +149,9 @@ input {
     height: 24px;
     margin: 0 10px;
     cursor: pointer;
+}
+icons{
+    display: flex;
+    gap: 2px;
+    
 }

@@ -1,21 +1,68 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const savedTasks = JSON.parse(localStorage.getItem('tasks'));
+
+    if (savedTasks) {
+        savedTasks.forEach((task) => tasks.push(task));
+        updateTasksList();
+        updatesStats();
+    }
+});
+
 let tasks = [];
 
+const saveTasks = () => {
+    localStorage.setItem('tasks', JSON.stringify(tasks)); 
+};
+
 const addTask = () => {
-    const todoinput = document.getElementById('todo-input'); //todoinput = iaskinput
+    const todoinput = document.getElementById('todo-input'); 
     const text = todoinput.value.trim();
 
     if (text) {
         tasks.push({ text: text, completed: false });
-        taskInput.value = "";
+        todoinput.value = "";
         updateTasksList();
+        updatesStats();
+        saveTasks();
     }
 };
 const toggletaskComplete = (index) => {
     tasks[index].completed = !tasks[index].completed;
-    console.log(tasks);
-}
+    updateTasksList();
+    updatesStats();
+    saveTasks();
+};
+
+const deleteTask = (index) => {
+    tasks.splice(index, 1);
+    updateTasksList();
+    updatesStats();
+    saveTasks();
+};
+
+const editTask = (index) => {
+    const todoinput = document.getElementById("todo-input");
+    todoinput.value = tasks[index].text;
+
+    tasks.splice(index, 1);
+    updateTasksList();
+    updatesStats();
+    saveTasks();
+};
+
+const updatesStats = () => {
+    const completedTasks = tasks.filter(task => task.completed).length;
+    const totalTasks = tasks.length;
+    const progress = (completedTasks / totalTasks) * 100;
+    const progressBar = document.getElementById("progressBar");
+
+    progressBar.style.width = `${progress}%`;
+
+    document.getElementById("completedTasks").innerText = `${completedTasks} / ${totalTasks}`; 
+};
+
 const updateTasksList = () => {
-    const todoList = document.getElementById("todo-list"); //todoList =tasklist
+    const todoList = document.getElementById("todo-list"); 
     todoList.innerHTML = "";
 
     tasks.forEach((task, index) => {
